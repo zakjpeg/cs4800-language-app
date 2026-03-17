@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { font-family: 'Nunito', sans-serif; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none;}
+  .font-display { font-family: 'Fraunces', serif; }
+}
+
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1;   }
+}
+.xp-shimmer::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 100px;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
